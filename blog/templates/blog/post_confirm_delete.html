@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <div class="content-section"> <!--css styling-->
+        <form method="POST"> <!--design form-->
+            {% csrf_token %} <!--for security of forms-->
+            <fieldset class="form-group"> <!--for coordinationg different group elements-->
+                <legend class="border-bottom mb-4">Delete Post</legend> <!--mb = margin bottom-->
+                <!--{{ form.as_p }}--> <!--{{ form }} we can access our form by this double  curly braces-->
+                <!--{{ form.as_p }} diffrent form elements in different paragraph-->
+                <h2>Are you sure you want to delete the post "{{object.title}}"</h2>
+        
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                <a class="btn btn-outline-secondary" href="{%url 'post-detail' object.id%}">Cancel</a>
+            </div>
+        </form>
+        
+    </div>
+{% endblock content %}

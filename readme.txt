@@ -1,0 +1,1 @@
+#This procfile is only for heroku deployment.For linux deployment,Delete this
